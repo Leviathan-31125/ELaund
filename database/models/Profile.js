@@ -26,7 +26,14 @@ const Profiles = DB.define(
         },
         phone: {
             type: DataTypes.STRING,
-            allowNull: true
+            allowNull: true,
+        },
+        phoneVerif: {
+            type: DataTypes.BOOLEAN,
+            allowNull: false,
+            validate: {
+                notEmpty: true
+            }
         },
         userId: {
             type: DataTypes.INTEGER,

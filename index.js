@@ -3,6 +3,7 @@ import cors from "cors";
 import dotenv from "dotenv";
 import DB from "./database/database.js";
 import UserRoute from "./routers/UserRouter.js";
+import ProfileRoute from "./routers/ProfileRouter.js";
 dotenv.config();
 
 const app = express();
@@ -17,6 +18,7 @@ app.get('/', (req, res) => {
     res.send('Welcome to BackEnd Elaund');
 });
 app.use('/api', UserRoute);
+app.use('/api/profile', ProfileRoute);
 
 app.listen(port, async () => {
     try {

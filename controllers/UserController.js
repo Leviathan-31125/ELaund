@@ -38,6 +38,7 @@ export const register = async (req, res) => {
         if (user) {
             await Profiles.create({
                 name: name,
+                phoneVerif: false,
                 userId: user.id
             });
 
